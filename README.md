@@ -1,4 +1,4 @@
-# TP 4.2 - Catalogue de Produits (Mini Boutique)
+# TP 4.2 & 5 - Catalogue de Produits (Mini Boutique)
 
 Ce projet est une première application statique développée avec **React** et **Vite**. L'objectif principal était d'apprendre à découper une interface utilisateur en plusieurs composants réutilisables et à leur transmettre des données.
 
