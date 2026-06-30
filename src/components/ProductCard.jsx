@@ -1,21 +1,31 @@
+
 import ProductBadge from './ProductBadge';
 
-function ProductCard({ name, price, category, image, description, available }) {
+function ProductCard({ product, isSelected, isFavorite, onSelectProduct, onToggleFavorite }) {
   return (
-    <article className="product-card">
-      <img src={image} alt={name} />
+    <article className={`product-card ${isSelected ? 'selected' : ''}`}>
+      <img src={product.image} alt={product.name} />
       <div className="product-card-content">
-        <ProductBadge category={category} />
+        <ProductBadge category={product.category} />
         
-        <h3>{name}</h3>
+        <h3>{product.name}</h3>
+        <p className="description">{product.description}</p>
         
-        <p className="description">{description}</p>
-        
-        <p className={`status ${available ? 'in-stock' : 'out-of-stock'}`}>
-          {available ? 'Disponible' : 'Rupture de stock'}
+        <p className={`status ${product.available ? 'in-stock' : 'out-of-stock'}`}>
+          {product.available ? '✅ Disponible' : '❌ Rupture de stock'}
         </p>
         
-        <strong>{price} €</strong>
+        <strong>{product.price} €</strong>
+        
+        <div className="product-actions">
+          <button className="details-btn" onClick={() => onSelectProduct(product)}>
+            🔎 Voir les détails
+          </button>
+          
+          <button className="fav-btn" onClick={() => onToggleFavorite(product.id)}>
+            {isFavorite ? '❤️ En favori' : '🤍 Favori'}
+          </button>
+        </div>
       </div>
     </article>
   );
