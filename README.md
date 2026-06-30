@@ -4,7 +4,7 @@ Ce projet est une première application statique développée avec **React** et 
 
 ---
 
-## 🚀 Guide de Lancement Rapide
+## Guide de Lancement Rapide
 
 Suis ces étapes simples pour lancer le projet sur ta machine :
 
